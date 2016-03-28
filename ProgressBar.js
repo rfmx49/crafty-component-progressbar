@@ -96,6 +96,8 @@ Crafty.c("ProgressBar", {
                     .color(flipDirection ? emptyColor : filledColor);
         this._pbHigherBlock = Crafty.e("2D, " + renderMethod + ", Color")
                     .color(flipDirection ? filledColor : emptyColor);
+        if (filledColor == "transparent") { this._pbLowerBlock.alpha = 0; }
+        if (emptyColor == "transparent") { this._pbHigherBlock.alpha = 0;	}
         this.attach(this._pbLowerBlock);
         this.attach(this._pbHigherBlock);
 
